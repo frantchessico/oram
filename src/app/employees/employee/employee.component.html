@@ -1,0 +1,50 @@
+<h4 class=" h1-responsive">ORAM Data Base</h4>
+
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+  <div class="form-group">
+    <input name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Full name" required>
+    <div *ngIf="fullName.invalid && fullName.touched" class="validation-error">Campo obrigatório.</div>
+  </div>
+  <div class="form-group">
+    <input name="position" #position="ngModel" [(ngModel)]="service.formData.position" class="form-control" placeholder="Distrito" required>
+    <div *ngIf="position.invalid && position.touched" class="validation-error">Campo obrigatório.</div>
+  </div>
+
+  <div class="form-group">
+    <select name="gender" #gender="ngModel" [(ngModel)]="service.formData.gender" class="form-control" placeholder="Género" required>
+      <option value="Masculino">Masculino</option>
+      <option value="Feminino">Feminino</option>
+    </select>
+    <div *ngIf="gender.invalid && gender.touched" class="validation-error">Campo obrigatório.</div>
+  </div>
+
+  <div class="form-group">
+    <select name="provincia" #provincia="ngModel" [(ngModel)]="service.formData.provincia" class="form-control" placeholder="Provincia" required>
+      <option value="Maputo">Maputo</option>
+      <option value="Sofala">Sofala</option>
+      <option value="Nampula">Nampula</option>
+      <option value="Zambêzia">Zambêzia</option>
+      <option value="Cabo Delga">Cabo Delga</option>
+      <option value="Tete">Tete</option>
+      <option value="Niassa">Niassa</option>
+      <option value="Inhambane">Inhambane</option>
+      <option value="Gaza">Gaza</option>
+      <option value="Manica">Manica</option>
+    </select>
+    <div *ngIf="provincia.invalid && provincia.touched" class="validation-error">Campo obrigatório.</div>
+  </div>
+
+    <!-- <div class="form-group col-md-6">
+      <input name="empCode" #empCode="ngModel" [(ngModel)]="service.formData.empCode" class="form-control" placeholder="Emp. code" required>
+    </div> -->
+    <div class="form-group  ">
+      <input name="mobile" #mobile="ngModel" [(ngModel)]="service.formData.mobile" class="form-control" placeholder="Telefone" required>
+      <div *ngIf="mobile.invalid && mobile.touched" class="validation-error">Campo obrigatório.</div>
+    </div>
+
+  <div class="form-group">
+    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">Salvar</button>
+  </div>
+
+</form>

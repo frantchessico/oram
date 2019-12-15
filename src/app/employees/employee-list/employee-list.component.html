@@ -1,0 +1,28 @@
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <th>Nome</th>
+      <th>Provincia</th>
+      <th>Distrito</th>
+      <th>Telefone</th>
+      <th>Género</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of list">
+        <td (click)="onEdit(emp)">{{emp.fullName}}</td>
+        <td>{{emp.provincia}}</td>
+        <td (click)="onEdit(emp)">{{emp.position}}</td>
+        <td (click)="onEdit(emp)">{{emp.mobile}}</td>
+        <td (click)="onEdit(emp)">{{emp.gender}}</td>
+
+        <td><a class="btn text-danger" (click)="onDelete(emp.id)"><i class="fa fa-trash"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <div *ngIf="list">
+    <strong>{{list.length}}</strong>
+  </div> -->
+
+</div>
